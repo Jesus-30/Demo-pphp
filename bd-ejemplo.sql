@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2020 a las 03:35:14
+-- Tiempo de generación: 13-05-2020 a las 04:05:35
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd-ejemplo`
 --
+CREATE DATABASE IF NOT EXISTS `bd-ejemplo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bd-ejemplo`;
 
 -- --------------------------------------------------------
 
@@ -29,18 +31,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `usuarios` (
-  `idUsuarios` int(11) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
-  `Telefono` varchar(100) NOT NULL
+  `idUsuario` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `telefono` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuarios`, `Nombre`, `Telefono`) VALUES
-(1, 'Jesus adalberto', '7614-9919'),
-(3, 'Juan ', '2214-9845');
+INSERT INTO `usuarios` (`idUsuario`, `nombre`, `telefono`) VALUES
+(1, 'Jesus', '7614-9919'),
+(2, 'Juan ', '7814-9965');
 
 --
 -- Índices para tablas volcadas
@@ -50,7 +52,7 @@ INSERT INTO `usuarios` (`idUsuarios`, `Nombre`, `Telefono`) VALUES
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`idUsuarios`);
+  ADD PRIMARY KEY (`idUsuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -60,7 +62,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
